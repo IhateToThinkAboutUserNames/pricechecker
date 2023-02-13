@@ -8,7 +8,6 @@ Please fill up the code you need and i will generete the file for you.
 
 codes = st.text_input('Enter your codes here')
 sterile = st.checkbox('Do you want them sterile ?')
-price_list = st.secrets['pl']
 df = pd.read_csv(SECRET_DB)
 df['Product code'] = df['Product code'].str.lower()
 

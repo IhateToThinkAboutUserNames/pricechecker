@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import requests
 """
 
 Please fill up the code you need and i will generete the file for you.

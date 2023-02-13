@@ -1,9 +1,5 @@
 import streamlit as st
 import pandas as pd
-import requests
-import urllib.request
-from urllib.request import urlopen
-import http.cookiejar
 
 
 
@@ -12,19 +8,10 @@ import http.cookiejar
 Please fill up the code you need and i will generete the file for you.
 
 """
-site= st.secrets['DATA']
-hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
-       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-       'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-       'Accept-Encoding': 'none',
-       'Accept-Language': 'en-US,en;q=0.8',
-       'Connection': 'keep-alive'}
 
-req = urllib2.Request(site, headers=hdr)
-page = urllib2.urlopen(req)
+
 codes = st.text_input('Enter your codes here')
-sterile = st.checkbox('Do you want them sterile ?')
-df = pd.read_csv(page)
+df = pd.read_html(r'https://nhs-my.sharepoint.com/:x:/r/personal/artur_lechowicz_nhs_net/Documents/Book3.csv?d=wa076147f5455434a8168de382ee892e4&csf=1&web=1&e=icJ14l')
 df['Product code'] = df['Product code'].str.lower()
 
 listt = codes.split()

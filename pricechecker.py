@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import requests
-import urllib2,cookielib
+import urllib2
+import cookielib
 
 
 

@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests
+import urllib.request
 from urllib.request import urlopen
 import http.cookiejar
 

@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests
-import urllib2
+from urllib.request import urlopen
 import cookielib
 
 

@@ -3,7 +3,9 @@ from deta import Deta
 import pandas as pd
 import streamlit as st
 
-deta = Deta('a0b17bjxebi_B6fTbHvU5KSSax9VGb4aKVeZD5wEmWpp')
+key = st.secrets(DETA_KEY)
+
+deta = Deta('key')
 drive = deta.Drive("App")
 hello = drive.get('Book3.csv')
 content = hello.read()

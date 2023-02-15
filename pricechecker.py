@@ -1,16 +1,21 @@
-import streamlit as st
+from io import StringIO
+from deta import Deta
 import pandas as pd
-import lxml
+import streamlit as st
 
-"""
+deta = Deta('a0b17bjxebi_B6fTbHvU5KSSax9VGb4aKVeZD5wEmWpp')
+drive = deta.Drive("App")
+hello = drive.get('Book3.csv')
+content = hello.read()
+hello.close()
+s=str(content,'utf-8')
 
-Please fill up the code you need and i will generete the file for you.
+data = StringIO(s) 
 
-"""
+df=pd.read_csv(data)
 
-
-codes = st.text_input('Enter your codes here')
 df['Product code'] = df['Product code'].str.lower()
+codes = input('Put your character here')
 
 listt = codes.split()
 prices = []

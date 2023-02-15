@@ -3,7 +3,7 @@ import pandas as pd
 
 page_title = "Medartis pricer checker"
 suppliers = ['Medartis']
-secret = st.secrets("DATA")
+secret = st.secrets["DATA"]
 df = pd.read_csv('secret')
 df['Product code'] = df['Product code'].str.lower()
 
